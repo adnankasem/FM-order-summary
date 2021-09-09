@@ -8,6 +8,7 @@
 
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Red+Hat+Display">
 
   <title>Frontend Mentor | Order summary card</title>
 
@@ -28,19 +29,22 @@
       justify-content: center;
       align-items: center;
       background-size: contain;
+      background-color: #E1E8FF;
     }
 
     #container {
 
       flex-direction: column;
-      max-width: 500px;
+      max-width: 400px;
       margin: auto;
+      padding: 50px;
     }
 
     #bottom-container {
       display: flex;
       flex-direction: column;
       background-color: white;
+      padding-bottom: 50px;
 
     }
 
@@ -54,34 +58,56 @@
       font-size: 25px;
       font-weight: 900;
       text-align: center;
+      font-family: 'Heebo';
     }
 
     #paragraph {
       color: #999999;
-      font-size: 13px;
+      font-size: 16px;
       text-align: center;
+      overflow-wrap: break-word;
+      padding: 10px;
+      font-family: 'Red Hat Display';
+
     }
 
     #text {
       align-items: flex-end;
+      padding: 15px;
     }
 
     .plan-container {
-      display: grid;
+      display: flex;
       grid-template-columns: 33% 33% 33%;
       background-color: hsl(224, 71%, 96%);
-      justify-content: center;
       align-items: center;
-      padding: 10px;
+      padding: 1px;
       margin: 20px;
       border-radius: 10px;
 
     }
 
-    h3,
+    .col {
+      flex: 1;
+      padding: 5px;
+    }
+
+    .music {
+      padding-left: 10px;
+    }
+
+    .h3 {
+      font-size: 17px;
+      font-family: 'Heebo';
+      font-weight: bold;
+    }
+
+
     p {
-      color: black;
+      color: #838793;
       font-size: 13px;
+      font-weight: bold;
+      font-family: 'Red Hat Display';
     }
 
     #buttons {
@@ -93,22 +119,41 @@
     #top-button {
       display: inline-block;
       padding: 10px;
-      border: 0.1em solid #FFFFFF;
-      margin: 0 0.3em 0.3em 0;
+      width: 330px;
+      height: 50px;
+      margin-bottom: 20px;
       border-radius: 10px;
-      box-sizing: border-box;
-      text-decoration: none;
-      font-family: 'Roboto', sans-serif;
-      font-weight: 300;
+      border: none;
+      outline: none;
+      font-size: 17px;
+      font-family: 'Heebo';
+      font-weight: bolder;
       color: #FFFFFF;
       text-align: center;
       transition: all 0.2s;
-      background-color: #766CF2;
+      background-color: #382AE1;
+      box-shadow: 5px 10px 15px #D5D2FF;
     }
 
     #top-button:hover {
-      color: #000000;
-      background-color: #FFFFFF;
+      color: #FFFFFF;
+      background-color: #766CF1;
+    }
+
+    .bottom-button {
+      background: none;
+      border: none;
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+      color: #6E7890;
+      font-weight: bold;
+    }
+
+    .bottom-button:hover {
+      color: #35374B;
+      font-weight: bold;
+      text-shadow: 0px 1px #6E7890
     }
   </style>
 </head>
@@ -128,26 +173,18 @@
         <p id='paragraph'>
           You can now listen to millions of songs, audiobooks, and podcasts on any
           device anywhere you like!
-
-          Annual Plan
-          $59.99/year
-
-          Change
-
-          Proceed to Payment
-          Cancel Order
         </p>
       </div>
       <div class='plan-container'>
-        <div>
+        <div class="col music">
           <img src='./images/icon-music.svg' />
 
         </div>
-        <div>
+        <div class='col plan-text'>
           <h3>Annual Plan</h3>
           <p>$59.99/year</p>
         </div>
-        <div>
+        <div class="col">
           <a href='https://google.com' style="color: rgb(48, 14, 241);">
             Change
           </a>
@@ -155,7 +192,7 @@
       </div>
       <div id='buttons'>
         <button id='top-button' type="button" class="btn btn-primary">Proceed to Payment</button>
-        <button>Cancel Order</button>
+        <button class="bottom-button">Cancel Order</button>
       </div>
     </div>
   </div>
